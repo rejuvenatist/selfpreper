@@ -1,0 +1,14 @@
+# Netlify build configuration for a Vite + React site.
+# 关键：Vite 打包产物在 dist/，所以发布目录必须是 dist。
+
+[build]
+  # 先生成目录索引 manifest.json，再让 Vite 打包。
+  command = "npm run build"
+  publish = "dist"
+
+# 单页应用（react-router）的兜底：所有路径都回到 index.html，
+# 由前端路由接管，刷新子页面不会 404。
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
