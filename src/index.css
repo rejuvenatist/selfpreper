@@ -47,6 +47,30 @@ body {
 
 .content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 顶栏：右上角显示当前登录账号的邮箱 */
+.topbar {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 24px;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+
+.topbar-email {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* 正文滚动区（顶栏固定，只有这里滚动） */
+.content-body {
+  flex: 1;
   overflow-y: auto;
 }
 
@@ -294,6 +318,11 @@ body {
   background: #000;
 }
 
+.login-btn:disabled {
+  background: #555;
+  cursor: default;
+}
+
 .login-sent {
   text-align: center;
   color: #111;
@@ -302,6 +331,13 @@ body {
 }
 .login-sent p {
   margin: 0;
+}
+
+.login-error {
+  margin: 0;
+  text-align: center;
+  color: #b91c1c;
+  font-size: 14px;
 }
 
 /* 移动端：侧边栏变窄 */
