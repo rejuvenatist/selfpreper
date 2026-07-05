@@ -17,12 +17,12 @@ export default function AuthConfirm() {
 
     // 情况一：SDK 已经处理完链接、会话已就绪 → 直接跳转。
     supabase.auth.getSession().then(({ data }) => {
-      if (!cancelled && data.session) navigate('/', { replace: true })
+      if (!cancelled && data.session) navigate('/plan', { replace: true })
     })
 
     // 情况二：SDK 还在解析链接 → 监听登录事件，成功后跳转。
     const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
-      if (!cancelled && session) navigate('/', { replace: true })
+      if (!cancelled && session) navigate('/plan', { replace: true })
     })
 
     // 链接过期或无效时，Supabase 会在 URL 里带上 error 参数。

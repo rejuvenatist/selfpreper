@@ -9,6 +9,8 @@ import Sidebar from './components/Sidebar.jsx'
 import NoteView from './components/NoteView.jsx'
 import LoginPage from './components/LoginPage.jsx'
 import AuthConfirm from './components/AuthConfirm.jsx'
+import PlanSelectionPage from './components/PlanSelectionPage.jsx'
+import PaymentPage from './components/PaymentPage.jsx'
 import { supabase } from './lib/supabase.js'
 
 function Home() {
@@ -59,11 +61,13 @@ export default function App() {
     <Routes>
       <Route
         path="/login"
-        element={session ? <Navigate to="/" replace /> : <LoginPage />}
+        element={session ? <Navigate to="/plan" replace /> : <LoginPage />}
       />
       {/* 用户点击邮件里的确认链接后打开的地址：
           等 Supabase 建立会话，然后跳转到笔记首页。 */}
       <Route path="/auth/confirm" element={<AuthConfirm />} />
+      <Route path="/plan" element={<PlanSelectionPage />} />
+      <Route path="/payment" element={session ? <PaymentPage /> : <Navigate to="/login" replace />} />
       <Route
         path="*"
         element={session ? <NotesLayout user={session.user} /> : <Navigate to="/login" replace />}

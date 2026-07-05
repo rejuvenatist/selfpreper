@@ -349,3 +349,98 @@ body {
     padding: 24px 18px 60px;
   }
 }
+
+/* ---------- 计划选择页 ---------- */
+.plan-page {
+  min-height: 100vh;
+  background: #ffffff; /* 纯白背景 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 16px;
+}
+
+.plan-card {
+  width: 100%;
+  max-width: 440px;
+  height: 800px; /* 保持原图的比例和大概尺寸 */
+  border: 3px solid #d49a0d; /* 黄色外框 */
+  border-radius: 20px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.plan-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.plan-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: #d49a0d; /* 黄色字体 */
+}
+
+.plan-price {
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.price-symbol {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.price-amount {
+  font-size: 56px;
+  font-weight: 800;
+}
+
+.price-period {
+  font-size: 18px;
+  color: #666;
+}
+
+.plan-btn {
+  width: 100%;
+  background: #d49a0d; /* 按钮黄色 */
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+.plan-btn:hover {
+  background: #b45309;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 16px;
+  color: #111;
+  line-height: 1.5;
+}
+
+.plan-features svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
